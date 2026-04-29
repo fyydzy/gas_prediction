@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project]
+name = "gas-prediction"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    # peft>=0.18 需要较新的 accelerate（含 clear_device_cache）；0.28.0 会 ImportError
+    "accelerate>=0.34.0",
+    "catboost>=1.2.10",
+    "lightgbm>=4.5.0",
+    "matplotlib>=3.10.8",
+    "neuralforecast>=3.1.7",
+    "numpy>=2.0.0",
+    "openpyxl>=3.1.0",
+    "pandas>=2.2.0",
+    "peft>=0.18.1",
+    "pmdarima>=2.1.1",
+    "prophet>=1.1.5",
+    "scikit-learn>=1.8.0",
+    "statsmodels>=0.14.6",
+    "timesfm>=1.3.0",
+    "torch>=2.11.0",
+    # peft>=0.18 需要 transformers 提供 EncoderDecoderCache 等符号；4.40.1 过旧会 ImportError
+    "transformers>=4.46.0,<5.0",
+    "xgboost>=2.1.0",
+]
+
+[[tool.uv.index]]
+url = "https://pypi.org/simple"
+default = true
