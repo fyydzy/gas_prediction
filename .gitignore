@@ -14,4 +14,5 @@ output1/
 *.yaml
 lightning_logs/
 *.md
+!README.md
 *.xlsx
